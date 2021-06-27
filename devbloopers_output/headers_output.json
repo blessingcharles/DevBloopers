@@ -1,0 +1,36 @@
+[
+    {
+        "url": "http://localhost:3000/",
+        "needed": [
+            "Content-Security-Policy",
+            "Strict-Transport-Security",
+            "X-Frame-Options",
+            "X-Content-Type-Options",
+            "Referrer-Policy",
+            "Cache-Control",
+            "Permissions-Policy"
+        ],
+        "bloopers": [
+            {
+                "X-Powered-By": "Express"
+            }
+        ]
+    },
+    {
+        "url": "https://httpbin.org/uuid",
+        "needed": [
+            "Content-Security-Policy",
+            "Strict-Transport-Security",
+            "X-Frame-Options",
+            "X-Content-Type-Options",
+            "Referrer-Policy",
+            "Cache-Control",
+            "Permissions-Policy"
+        ],
+        "bloopers": [
+            {
+                "Server": "gunicorn/19.9.0"
+            }
+        ]
+    }
+]

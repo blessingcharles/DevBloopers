@@ -1,0 +1,56 @@
+{   
+    "subdomains" : {
+		"description" : "access to all subdomains",
+		"severity" : "low",
+		"exploitation" : "try to find a xss in any of the available subdomains"
+	},
+    "prefix match" : {
+		"description" : "Regex failed in prefix match [vulnerble.com.*]",
+		"severity" : "high",
+		"exploitation" : "Make requests from vulnerable.com.<your-domain>.com"
+	},
+
+	"suffix match" : {
+		"description" : "Regex failed in suffix match [*vulnerable.com]",
+		"severity" : "high",
+		"exploitation" : "Make requests from <your-domain>vulnerable.com"
+	},
+
+	"all origin" : {
+		"description" : "All hosts allowed , but due to RFC we can't exploit it because ACAO need to be specific",
+		"severity" : "low",
+		"exploitation" : "Not possible"
+	},
+	"reflected": {
+		"description" : "This host allows any origin to make requests to it.",
+		"severity" : "high",
+		"exploitation" : "Make requests from any domain you control."
+	},
+	"invalid value" : {
+		"description" : "Header's value is invalid, this CORS implementation doesn't work at all.",
+		"severity" : "low",
+		"exploitation" : "Not possible"
+	},
+
+	"null" : {
+		"description" : "NULL origin allowed",
+		"severity" : "high",
+		"exploitation" : "Make requests from a sandboxed iframe."
+	},
+	"http" : {
+		"description" : "Allows sharing resources over an unencrypted (HTTP) connection.",
+		"severity" : "low",
+		"exploitation" : "MITM possible"
+	},
+	"underscore" : {
+		"description" : "Regex failed for underscore",
+		"severity" : "high",
+		"exploitation" : "Make requests from vulnerable.com_.<your-domain>.com"
+	},
+	"unescaped regex" : {
+		"description" : "The regex used for origin verification contains an unescaped dot (.) character.",
+		"severity" : "high",
+		"exploitation" : "If the target is sub.example.com, make requests from subxexample.com"
+	}
+
+}

@@ -1,0 +1,65 @@
+[
+    {
+        "description": "This host allows any origin to make requests to it.",
+        "severity": "high",
+        "exploitation": "Make requests from any domain you control.",
+        "url": "https://httpbin.org/uuid",
+        "vulnerability": "reflect origin",
+        "access-control-allow-origin": "example.com",
+        "acces-control-allow-credentials": "true"
+    },
+    {
+        "description": "Regex failed in prefix match [vulnerble.com.*]",
+        "severity": "high",
+        "exploitation": "Make requests from vulnerable.com<your-domain>.com",
+        "url": "https://httpbin.org/uuid",
+        "vulnerability": "prefix match",
+        "access-control-allow-origin": "httpbin.orgexample.com",
+        "acces-control-allow-credentials": "true"
+    },
+    {
+        "description": "All hosts allowed , but due to RFC we can't exploit it because ACAO need to be specific",
+        "severity": "low",
+        "exploitation": "Not possible",
+        "url": "http://localhost:3000/",
+        "vulnerability": "trust all origin",
+        "access-control-allow-origin": "*",
+        "acces-control-allow-credentials": "true"
+    },
+    {
+        "description": "Regex failed in prefix match [vulnerble.com.*]",
+        "severity": "high",
+        "exploitation": "Make requests from vulnerable.com<your-domain>.com",
+        "url": "https://httpbin.org/uuid",
+        "vulnerability": "prefix match",
+        "access-control-allow-origin": "httpbin.orgexample.com",
+        "acces-control-allow-credentials": "true"
+    },
+    {
+        "description": "Regex failed in suffix match [*vulnerable.com]",
+        "severity": "high",
+        "exploitation": "Make requests from <your-domain>vulnerable.com",
+        "url": "https://httpbin.org/uuid",
+        "vulnerability": "suffix match",
+        "access-control-allow-origin": "examplehttpbin.org",
+        "acces-control-allow-credentials": "true"
+    },
+    {
+        "description": "Allows sharing resources over an unencrypted (HTTP) connection.",
+        "severity": "low",
+        "exploitation": "MITM possible",
+        "url": "https://httpbin.org/uuid",
+        "vulnerability": "http allowance",
+        "access-control-allow-origin": "http://httpbin.org",
+        "acces-control-allow-credentials": "true"
+    },
+    {
+        "description": "Regex failed for underscore",
+        "severity": "high",
+        "exploitation": "Make requests from vulnerable.com_.<your-domain>.com",
+        "url": "https://httpbin.org/uuid",
+        "vulnerability": "underscore regex failed",
+        "access-control-allow-origin": "httpbin.org_.example.com",
+        "acces-control-allow-credentials": "true"
+    }
+]

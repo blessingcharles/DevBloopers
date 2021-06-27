@@ -1,0 +1,31 @@
+{
+    "needed":[
+        "Content-Security-Policy",
+        "Strict-Transport-Security",
+        "X-Frame-Options",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Cache-Control",
+        "Permissions-Policy"
+    ],
+
+    "bloopers":[
+        "Server",
+        "Public-Key-Pins",
+        "X-Powered-By",
+        "X-AspNet-Version"
+    ],
+
+    "needed examples":{
+        "Content-Security-Policy": "default-src 'self'; upgrade-insecure-requests",
+        "Strict-Transport-Security": "max-age=1000",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "same-origin",
+        "Cache-Control": "no-store",
+        "Clear-Site-Data": "*",
+        "Permissions-Policy": "microphone 'none'; camera 'none'"
+    }
+
+}
+
